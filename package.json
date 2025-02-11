@@ -8,6 +8,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "xsd-schema-validator": "^0.8.0"
+    "libxmljs2": "^0.35.0"
   }
 }
