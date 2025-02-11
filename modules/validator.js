@@ -2,18 +2,8 @@ import libxmljs from "libxmljs2";
 import fs from "fs";
 import path from "path";
 
-const schemaDir = "schema";
-const schemaPath = path.join(schemaDir, "oBDS_v3.0.3.xsd");
-const importDir = "imports";
-const exportDir = "exports";
 
-[schemaDir, exportDir, importDir].forEach((dir) => {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-});
-
-export async function processFiles() {
+export async function processFiles(schemaPath,importDir,exportDir) {
   const files = fs.readdirSync(importDir).filter(file => file.endsWith(".xml"));
 
   for (const file of files) {
