@@ -1,0 +1,13 @@
+{
+  "name": "bnho-xml-validator",
+  "version": "0.0.1",
+  "description": "A simple XML validator using XSD schemas.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "xsd-schema-validator": "^0.8.0"
+  }
+}
