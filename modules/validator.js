@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 
-export async function processFiles(schemaPath, importDir, exportDir) {
+export async function validateFiles(schemaPath, importDir, exportDir) {
   const files = fs.readdirSync(importDir).filter(file => file.endsWith(".xml"));
 
   for (const file of files) {

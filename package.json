@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "validate": "node index.js validate",
+    "compare": "node index.js compare"
   },
   "dependencies": {
     "libxmljs2": "^0.35.0"
