@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 
-export async function processFiles(schemaPath, importDir, exportDir, excludeNodes = []) {
+export async function processFiles(schemaPath, importDir, exportDir) {
   const files = fs.readdirSync(importDir).filter(file => file.endsWith(".xml"));
 
   for (const file of files) {
@@ -17,14 +17,6 @@ export async function processFiles(schemaPath, importDir, exportDir, excludeNode
       const xsdDoc = libxmljs.parseXml(xsd);
       const xmlDoc = libxmljs.parseXml(xml);
       
-      // Remove excluded nodes if specified
-      for (const xpath of excludeNodes) {
-        const nodesToRemove = xmlDoc.find(xpath);
-        for (const node of nodesToRemove) {
-          node.remove();
-        }
-      }
-
       const isValid = xmlDoc.validate(xsdDoc);
       
       if (isValid) {
